@@ -1,29 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wor kBook</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static',filename='style.css') }}"
-    />
+{% extends "base.html" %}
 
-    <script
-      src="https://kit.fontawesome.com/3bfd3ce9e5.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="quote">
-        <h1>I write to remember. I read to forget</h1>
-      </div>
-      <div class="entry">
-        <a href="/login"><button>Login</button></a>
-        <a href="/register"><button>Register</button></a>
-      </div>
+{% block title %} WorkBook - Home {% endblock %} 
+
+{% block content %}
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>I write to remember.<br />I read to forget.</h1>
+
+    <p>
+      Your personal digital journal for organazing thoughts, memories, ideas,
+      productivity, and self-growth.
+    </p>
+
+    <div class="buttons">
+      <a href="{{ url_for('register') }}">
+        <button class="primary">Get Started</button>
+      </a>
+
+      <a href="{{ url_for('login') }}">
+        <button class="secondary">Login</button>
+      </a>
     </div>
-    <nav></nav>
-  </body>
-</html>
+  </div>
+
+  <div class="hero-image">
+    <div class="floating-card card1">
+      <img
+        src="https://images.unsplash.com/photo-1517842645767-c639042777db"
+        alt="Writing notes"
+      />
+      <p>Daily Journaling</p>
+    </div>
+
+    <div class="floating-card card2">
+      <img
+        src="https://images.unsplash.com/photo-1499750310107-5fef28a66643"
+        alt="Planning"
+      />
+      <p>Plan Your Goals</p>
+    </div>
+
+    <div class="floating-card card3">
+      <img
+        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+        alt="Productivity"
+      />
+      <p>Stay Productive</p>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="card">
+    <i class="fa-solid fa-pen"></i>
+    <h3>Write Daily</h3>
+    <p>Capture your thoughts and organize your ideas effortlessly.</p>
+  </div>
+
+  <div class="card">
+    <i class="fa-solid fa-lock"></i>
+    <h3>Private & Secure</h3>
+    <p>Your notes stay protected and accessible only to you.</p>
+  </div>
+
+  <div class="card">
+    <i class="fa-solid fa-cloud"></i>
+    <h3>Access Anywhere</h3>
+    <p>Use WorkBook on desktop, tablet, or mobile anytime.</p>
+  </div>
+</section>
+
+{% endblock %}
